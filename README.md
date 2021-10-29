@@ -102,4 +102,4 @@ PostgreSQL(Database)|CSS|
 ![Activity Flow Diagram](https://github.com/vamshikrishnam-coder/Hotel_Managment/blob/main/Activity%402x%20(1).png)
 
 ## Data Flow Diagram
-![Data Flow Diagram](https://github.com/vamshikrishnam-coder/Hotel_Managment/blob/main/Activity%402x%20(1).png)
+![Data Flow Diagram](https://github.com/vamshikrishnam-coder/Hotel_Managment/blob/main/dataflow.PNG)
