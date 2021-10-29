@@ -24,9 +24,6 @@
 
 
 
-## Project Design Flow
-![Project Design Flow](https://github.com/jithendra1798/SE-Project/blob/main/assets/Project%20Design%20Flow.png)
-
 
 ## Project Requirements/Features
 
@@ -41,21 +38,16 @@
 
 
 ### 2. User
-> There are 3 types of users
- 
-|New registration|Active user|Old user|
-|:---|:---|:---|
-|Registration yet to approve|Registration Approved|User in break/due fine|
-|Shows Registration Pending|Can Access completely|Limited access|
 
 #### Active user features :
-- Can lend max of 4 books.
-- Request other user, if he needs a book taken by other user.
-- Pays fine, if he lost the book or delays renewal of book.
-- History of books he took.
-- Can buy a book, if availabe to sale by another user or by library.
-- Can generate and use the Library ID card in PDF
-- Can give Feedback of experience while taking books
+- Request any table booking in restaurant
+- Advance Booking online.
+- Can able to see  his/her Reservation History .
+- Can able to add Food.
+- Can give Feedback of experience with hotel.
+- Can automatically generate bill.
+
+
 
 ### 3. Other Features
 - Automated emails to users, reminding for renewal of books
