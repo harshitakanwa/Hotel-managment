@@ -1,5 +1,5 @@
 
-<a href="https://jithendra1798.pythonanywhere.com/"><h1 align = "center">Hotel Managment</h1></a>
+<a href="https://github.com/vamshikrishnam-coder/Hotel_Managment.git"><h1 align = "center">Hotel Managment</h1></a>
 
 ## Members
 ||Name|Roll No|Email|
