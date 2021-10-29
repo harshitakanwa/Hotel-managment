@@ -101,8 +101,5 @@ PostgreSQL(Database)|CSS|
 ## Activity Flow Diagram
 ![Activity Flow Diagram](https://github.com/vamshikrishnam-coder/Hotel_Managment/blob/main/Activity%402x%20(1).png)
 
-
-
-## Links and Documents
-### 1. [Schema Diagram PDF](https://github.com/jithendra1798/SE-Project/blob/main/assets/Tables%20Schema1.pdf)
-
+## Data Flow Diagram
+![Data Flow Diagram](https://github.com/vamshikrishnam-coder/Hotel_Managment/blob/main/Activity%402x%20(1).png)
