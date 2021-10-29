@@ -99,7 +99,7 @@ PostgreSQL(Database)|CSS|
 - Apple Safari (latest publicly-released version) running on the two latest publicly-release Mac OS versions, or Apple iPad
 
 ## Activity Flow Diagram
-![Activity Flow Diagram](https://raw.githubusercontent.com/jithendra1798/SE-Project/main/assets/Dataflow1.png)
+![Activity Flow Diagram](https://github.com/vamshikrishnam-coder/Hotel_Managment/blob/main/Activity%402x%20(1).png)
 
 
 
