@@ -35,8 +35,6 @@
  * Make others admin
  * Can see the Bookings
 
-
-
 ### 2. User
 
 #### Active user features :
@@ -47,33 +45,25 @@
 - Can give Feedback of experience with hotel.
 - Can automatically generate bill.
 
-
-
 ### 3. Other Features
-- Automated emails to users, reminding for renewal of books
-- Users can search books in the catalogue
-- Lending/Taking books is of 3 categories
-    - Take book from Library
-    - Take book from other user
-    - Buy book, if available for sale
-- Automated emails on registration approval/banning/termination
-- Automated generation of Library ID cards
-- Different types of subscriptions for users
+- Automated emails to users, reminding for any Bookings .
+- Users can search Hotels in the catalogue.
+- Automated emails on Booking  approval/banning/termination.
 
 ## Software Specifications
 |Backend|Frontend|
 |:---|:---|
 |Django (Python)|HTML|
-MySQL(Database)|CSS|
+PostgreSQL(Database)|CSS|
 |   |JS|
 
 ## Non-Functional Requirements
 - Scalability and reliability is taken care by django, as it is simple, highly scalable and flexible.
 - Security of the sensitive data transmission of users is taken care by django.
 - We designed the database with high data integrity.
-- The performance of the application will be good with the optimised queries in MySQL.
+- The performance of the application will be good with the optimised queries in PostgresSQL.
 - Maintainability and Manageability of the application will be good, as we are following the best Software principles.
-- MySQL is capable enough to scale the project to even higher.
+- PostgreSQL is capable enough to scale the project to even higher.
 - The portability of the application is high, as we are using one of the most popular framework.
 
 
@@ -115,13 +105,4 @@ MySQL(Database)|CSS|
 
 ## Links and Documents
 ### 1. [Schema Diagram PDF](https://github.com/jithendra1798/SE-Project/blob/main/assets/Tables%20Schema1.pdf)
-### 2. [Schema Diagram Document](https://docs.google.com/document/d/1f0tBZoOreObHvXWhmM2hPPdkngzHdIXYdW9x57JuSEk/edit)
-### 3. [Schema variables Document](https://docs.google.com/document/d/1xRhhgMQ8qZG436_hzpF3xj-nXgE0rf1wI6bEavzY5KE/edit)
-### 4. [Library Project Design Flow](https://whimsical.com/library-8khLqftvQHyXJhb3m7ecsL)
-### 5. [Reference e-Library](https://www.edigitallibrary.com/)
-### 6. [Embed MySQL in Python/Django](https://www.tutorialspoint.com/python_data_access/python_mysql_introduction.htm)
-### 7. [Dynamic Search Field - Django](https://betterprogramming.pub/how-to-make-search-fields-dynamic-in-django-rest-framework-72922bfa1543)
-### 8. [Dynamic Search Field 2 - Django](https://openfolder.sh/django-tutorial-as-you-type-search-with-ajax)
-### 9. [Python MySQL](https://www.w3schools.com/python/python_mysql_getstarted.asp)
-### 10. [Override Admin Django](https://docs.djangoproject.com/en/3.2/ref/contrib/admin/#admin-overriding-templates)
-### 11. [Django Messages and Mails](https://www.ordinarycoders.com/blog/article/django-messages-framework)
+
