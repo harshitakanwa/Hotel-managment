@@ -1,6 +1,5 @@
-# Hotel_Managment
 
-<a href="https://jithendra1798.pythonanywhere.com/"><h1 align = "center">Generic Library Managment</h1></a>
+<a href="https://jithendra1798.pythonanywhere.com/"><h1 align = "center">Hotel Managment</h1></a>
 
 ## Members
 ||Name|Roll No|Email|
@@ -28,13 +27,13 @@
 ## Project Requirements/Features
 
 ### 1. Admin
- * Add books
- * Confirm registration of user
- * Can see all user details
- * Remove/add users
+ * Add Rooms, hotels etc
+ * Updating room details ,prices
+ * Can see all details of users
+ * Remove/add Customers
  * Make others admin
- * Can see the books taken by user
- * Can track history of book (Users used)
+ * Can see the Bookings
+
 
 
 ### 2. User
