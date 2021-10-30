@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Register</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" -->
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Custom Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div style="width: 70%; margin:auto;">
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div>
+                            {% for message in messages %}
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="background-color: red;">
+                                    <center><strong><h5>{{message}}</h5></strong></center> 
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            {% endfor  %}
+                        </div>
+                        <br><br>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="text-center" style="font-size: xx-large;">Register to Travelsenia</h4><br><br>
+                                <div class="form-validation">
+                                    <form class="form-valide" action="register" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">First Name<span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" required="Please enter a valid name" class="form-control" name="user_first_name" placeholder="Enter your first name..">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">Last Name<span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" name="user_last_name" placeholder="Enter your last name..">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-email" name="user_email" placeholder="Your valid email..">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-password">Password <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="password" class="form-control" id="val-password" name="user_password" placeholder="Choose a safe one..">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-confirm-password">Confirm Password <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="password" class="form-control" id="val-confirm-password" name="user_password1" placeholder="..and confirm it!">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Gender <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" id="val-skill" name="user_gender">
+                                                    <option value="">Please select</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">Address <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="form-control" name="user_address" rows="3" placeholder="Enter your Permanent Address" required="required"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-phonein">Phone (IND) <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="number" class="form-control" id="val-phonein" name="user_phone" placeholder="Enter 10-digit Mobile" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" >Date of Birth <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="date" class="form-control" name="user_dob" placeholder="DD-MM-YYYY" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-phonein">Aadhaar (12-digit) <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="number" class="form-control" id="val-phonein" name="user_aadhaar" placeholder="Enter 12-digit Aadhaar" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" >Upload Aadhaar <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="file" class="form-control" name="user_aadhar_photo" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" >Upload Photo <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="file" class="form-control" name="user_photo" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"><a href="#">Terms &amp; Conditions</a>  <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <label class="css-control css-control-primary css-checkbox" for="val-terms">
+                                                    <input type="checkbox" class="css-control-input" id="val-terms" name="val-terms" value="1"> <span class="css-control-indicator"></span> I agree to the terms</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                                    <p class="mt-5 login-form__footer">Already have an account? <a href="login" class="text-primary"><button class="btn btn-primary">Login</button></a> here</p>
+                                    </p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+
+    </div>        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div style="box-shadow: 4px 4px 5px grey;;text-align: center; margin:auto; background-color:lightgray; margin-bottom:0; padding:10px auto">
+            <div class="copyright" style="text-align: center; margin:auto; background-color:lightgray; margin-bottom:0; padding:10px auto">
+                <center><p>Copyright &copy; Hotel Travesenia 2021. All Rights Reserved.</p></center>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <script src="{% static 'plugins/common/common.min.js' %}"></script>
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/gleek.js' %}"></script>
+    <script src="{% static 'js/styleSwitcher.js' %}"></script>
+    <script src="{% static './plugins/validation/jquery.validate.min.js' %}"></script>
+    <script src="{% static './plugins/validation/jquery.validate-init.js' %}"></script>
+
+</body>
+
+</html>

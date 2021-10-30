@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div  class="col-lg-8 col-xl-12">
+            {% for message in messages %}
+            <br>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="background-color: lightgreen;">
+                    <center><strong><h5>{{message}}</h5></strong></center> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><br>
+            {% endfor  %}
+            </div>
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-1">
+                            <div class="card-body">
+                                <a href="../books/">
+                                    <h3 class="card-title text-white">Books taken</h3>
+                                    <div class="d-inline-block">
+                                        <!-- jinja code -->
+                                        <h2 class="text-white">4565</h2>
+                                        <!-- <p class="text-white mb-0">Jan - March 2019</p> -->
+                                    </div>
+                                    <span class="float-right display-5 opacity-5"><i class="fa fa-book"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-2">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Due</h3>
+                                <div class="d-inline-block">
+                                    <!-- jinja format<a href="./page-error-500.html"></a> -->
+                                    <h2 class="text-white">Rs 8541</h2>
+                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-3">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">User Type</h3>
+                                <div class="d-inline-block">
+                                    <!-- jinja format -->
+                                    <h2 class="text-white" style="text-transform: capitalize;">{{user.user_status}}</h2>
+                                    <p class="text-white mb-0">{{user.user_joined_date}}</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6" href="./page-error-500.html">
+                        <div class="card gradient-4">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">To sell</h3>
+                                <div class="d-inline-block">
+                                    <!-- jinja format -->
+                                    <h2 class="text-white">99%</h2>
+                                    <p class="text-white mb-0">Jan - March 2019</p>
+                                </div>
+                                
+                                <!-- C:\Users\mvkri\OneDrive\Desktop\quixlab\ -->
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart" ></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center mb-4">
+                                    <img class="mr-3" src="{{user.user_photo.url}}" width="80" height="80" alt="">
+                                    <div class="media-body">
+                                        <!-- jinja format -->
+                                        <h4 class="mb-0">{{user.user_first_name}} {{user.user_last_name}}</h4>
+                                        <p class="text-muted mb-0"></p><br>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-5">
+                                    <div class="col">
+                                        <div class="card card-profile text-center">
+                                            <span class="mb-1 text-warning" style="font-size: 100%">Status</span>
+                                            <h4 class="mb-0" style="text-transform: uppercase;">{{user.user_status}}</h4>
+                                            <p class="text-muted"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card card-profile text-center">
+                                            <span class="mb-1 text-primary" style="font-size: 100%">Mobile</span>
+                                            <h4 class="mb-0">{{user.user_phone}}</h4>
+                                            <p class="text-muted"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-5">
+                                    <div class="col">
+                                        <div class="card card-profile text-center">
+                                            <span class="mb-1 text-primary" style="font-size: 100%">Email</span>
+                                            <h4 class="mb-0">{{user.user_email}}</h4>
+                                            <p class="text-muted"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-5">
+                                    <div class="col">
+                                        <div class="card card-profile text-center">
+                                            <span class="mb-1 text-primary" style="font-size: 100%">Joined on</span>
+                                            <h4 class="mb-0">{{user.user_joined_date}}</h4>
+                                            <p class="text-muted"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card card-profile text-center">
+                                            <span class="mb-1 text-primary" style="font-size: 100%">Date of Birth</span>
+                                            <h4 class="mb-0">{{user.user_dob}}</h4>
+                                            <p class="text-muted"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-5">
+                                    <div class="col">
+                                        <div class="card card-profile text-center">
+                                            <span class="mb-1 text-primary" style="font-size: 100%">Address</span>
+                                            <h4 class="mb-0">{{user.user_address}}</h4>
+                                            <p class="text-muted"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <!-- <button class="btn btn-danger px-5">Follow Now</button> -->
+                                    </div>
+                                </div>
+
+                                <!-- <h4>About Me</h4>
+                                jinja format 
+                                <p class="text-muted">Hi, I'm Pikamy, has been the industry standard dummy text ever since the 1500s.</p>
+                                <ul class="card-profile__info">
+                                    <li class="mb-1"><strong class="text-dark mr-4">Mobile</strong> <span>{{user.user_phone}}</span></li>
+                                    <li><strong class="text-dark mr-4">Email </strong> <span>&nbsp; {{user.user_email}}</span></li>
+                                    <li class="mb-1"><strong class="text-dark mr-4">Aadhar</strong><span>{{user.user_aadhaar}}</span></li>
+                                    <li class="mb-1"><strong class="text-dark mr-4">Status</strong> <span style="text-transform: uppercase;">{{user.user_status}}</span></li>
+                                    <li><strong class="text-dark mr-4">Joined on </strong> <span>{{user.user_joined_date}}</span></li>
+                                    <li class="mb-1"><strong class="text-dark mr-4">Address</strong><span></span>{{user.user_address}}</span></li>
+                                </ul>-->
+                            </div>
+                        </div>  
+                    </div>
+                <div class="col-md-6 col-lg-4 col-xl-6">
+                    <div class="card">
+                        <div class="card-body px-0">
+                            <h3 class="card-title px-4 mb-3">Todo</h3>
+                            <div class="todo-list">
+                                <div class="tdl-holder">
+                                    <div class="tdl-content">
+                                        <ul id="todo_list">
+                                            {% for task in tasks %}
+                                            <li><label>
+                                                <form action="accomplish" method="POST">
+                                                {% csrf_token %}
+                                                <input type="checkbox" name="task_id" value={{task.task_id}}><i></i><span>{{task.task}}</span><a href='#' class="ti-trash"><input type="hidden" name="task_id" value={{task.task_id}}></a>
+                                            </form>
+                                            </label></li>
+                                            
+                                            
+                                            {% endfor %}
+                                        </ul>
+                                    </div>    
+                                    <div class="px-4">
+                                        <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4  style="font-size: medium;padding-top: 20px; padding-left: 20px;">If you have any Queries or Suggestions write to us,</h4><br><br>
+                        <div class="card-body">
+                            <form action="../contact" class="form-profile" method="POST">
+                                {% csrf_token %}
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8"><label class="col-lg-12 col-form-label" for="val-email">{{user.user_email}}</label>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <input type="hidden" class="form-control" value={{user.user_email}} id="val-email" name="email" placeholder="Your valid email..">
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="query" id="textarea" cols="30" rows="6" placeholder="Post a new message"></textarea>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <button type="submit" class="btn btn-primary px-3 ml-4">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+            
+              <h3>Contact us</h3>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <img src="{% static './images/users/8.jpg' %}" class="rounded-circle" alt="">
+                                    <h5 class="mt-3 mb-1">Ana Liem</h5>
+                                    <p class="m-0">Senior Manager</p>
+                                    <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <img src="{% static './images/users/5.jpg' %}" class="rounded-circle" alt="">
+                                    <h5 class="mt-3 mb-1">John Abraham</h5>
+                                    <p class="m-0">Store Manager</p>
+                                    <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <img src="{% static './images/users/7.jpg' %}" class="rounded-circle" alt="">
+                                    <h5 class="mt-3 mb-1">John Doe</h5>
+                                    <p class="m-0">Sales Man</p>
+                                    <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <img src="{% static './images/users/1.jpg' %}" class="rounded-circle" alt="">
+                                    <h5 class="mt-3 mb-1">Mehedi Titas</h5>
+                                    <p class="m-0">Online Marketer</p>
+                                    <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>                   
+
+                 <h4 class="card-title mb-0">Library location </h4>
+                             <!-- library map -->
+                              <!-- Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.390640155044!2d74.79212031544334!3d13.010777590830191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35211b768ac8f%3A0x6b1144ac2d5dadf3!2sNational%20Institute%20of%20Technology%20Karnataka%20Surathkal.!5e0!3m2!1sen!2sin!4v1633972863883!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <!-- Footer-->
+     
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+{% endblock %}

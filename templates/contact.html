@@ -1,0 +1,197 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact Us</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+    <!-- Navigation-->
+    <nav class="navbar navbar-light bg-light static-top" style="padding-left: 15%; padding-right: 15%;">
+        <div class="container-fluid" >
+            <a class="navbar-brand" href="/" ><img style="width: 60px; height:60px; margin-right:20px" src="{% static 'assets/logo.png' %}">Hotel Travelsenia
+            <a class="btn btn-primary"  href="accounts/register">Sign Up/Register</a>
+            <a class="btn btn-primary"  href="accounts/login">Login</a>
+            <a class="btn btn-primary"  href="contact">Contact Us</a>
+        </div>
+    </nav>
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+       
+                <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center mb-4">
+                                    <img class="mr-3" src="{% static 'images/avatar/testimonials-3.jpg' %}" width="80" height="80" alt="">
+                                    <div class="media-body">
+                                        <h3 class="mb-0">jitendra</h3>
+                                        <p class="text-muted mb-0">ChairPerson</p>
+                                    </div>
+                                </div>
+                                <h4>About Me</h4>
+                                <p class="text-muted">Hi, I'm jitendra, I am in the industry ever since the 1980s.</p>
+                                <ul class="card-profile__info">
+                                    <li class="mb-1"><strong class="text-dark mr-4">Mobile</strong> <span>01793931609</span></li>
+                                    <li><strong class="text-dark mr-4">Email</strong> <span>name@domain.com</span></li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center mb-4">
+                                    <img class="mr-3" src="{% static 'images/avatar/testimonials-4.jpg' %}" width="80" height="80" alt="">
+                                    <div class="media-body">
+                                        <h3 class="mb-0">Mahadev</h3>
+                                        <p class="text-muted mb-0">vicePresident</p>
+                                    </div>
+                                </div>
+                                <h4>About Me</h4>
+                                <p class="text-muted">Hi, I'm mahadev,  I am in the industry  since the 1990s.</p>
+                                <ul class="card-profile__info">
+                                    <li class="mb-1"><strong class="text-dark mr-4">Mobile</strong> <span>01793931609</span></li>
+                                    <li><strong class="text-dark mr-4">Email</strong> <span>name@domain.com</span></li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center mb-4">
+                                    <img class="mr-3" src="{% static 'images/avatar/testimonials-2.jpg' %}" width="80" height="80" alt="">
+                                    <div class="media-body">
+                                        <h3 class="mb-0">Harshita</h3>
+                                        <p class="text-muted mb-0">Board Member</p>
+                                    </div>
+                                </div>
+                                <h4>About Me</h4>
+                                <p class="text-muted">Hi, I'm Harshita, i have  been in the industry  since the 1960s.</p>
+                                <ul class="card-profile__info">
+                                    <li class="mb-1"><strong class="text-dark mr-4">Mobile</strong> <span>01793931609</span></li>
+                                    <li><strong class="text-dark mr-4">Email</strong> <span>name@domain.com</span></li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center mb-4">
+                                    <img class="mr-3" src="{% static 'images/avatar/testimonials-1.jpg' %}" width="80" height="80" alt="">
+                                    <div class="media-body">
+                                        <h3 class="mb-0">Krishna</h3>
+                                        <p class="text-muted mb-0">Board Member</p>
+                                    </div>
+                                </div>
+                                <h4>About Me</h4>
+                                <p class="text-muted">Hi, I'm Krishna  I am in the industry  since the 1990s.</p>
+                                <ul class="card-profile__info">
+                                    <li class="mb-1"><strong class="text-dark mr-4">Mobile</strong> <span>01793931609</span></li>
+                                    <li><strong class="text-dark mr-4">Email</strong> <span>name@domain.com</span></li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>
+                    <div  class="col-lg-8 col-xl-12">
+                        {% for message in messages %}
+                        <br>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="background-color: lightgreen;">
+                                <center><strong><h5>{{message}}</h5></strong></center> 
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div><br>
+                        {% endfor  %}
+                    </div>
+                    <div class="col-lg-8 col-xl-12">
+                        <div class="card">
+                            <h4  style="font-size: x-large;padding-top: 20px; padding-left: 20px;">If you have any Queries or Suggestions write to us,</h4><br><br>
+                            <div class="card-body">
+                                <form action="contact" class="form-profile" method="POST">
+                                    {% csrf_token %}
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="Email" class="form-control" id="val-email" name="email" placeholder="Your valid email..">
+                                            </div>
+                                        </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="query" id="textarea" cols="30" rows="6" placeholder="Post a new message"></textarea>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button type="submit" class="btn btn-primary px-3 ml-4">Send</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by  Hotel Travelsenia</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="{% static 'plugins/common/common.min.js' %}"></script>
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/gleek.js' %}"></script>
+    <script src="{% static 'js/styleSwitcher.js' %}"></script>
+
+</body>
+
+</html>

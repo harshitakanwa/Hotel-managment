@@ -1,0 +1,190 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Hotel Transelvania</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.png' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand" href="/" ><img style="width: 60px; height:60px; margin-right:20px" src="{% static 'assets/logo.png' %}">Magnus Library Management System</a>
+                
+                {% if request.user.is_authenticated %}
+                <a class="btn btn-primary"  href="accounts/login">Dashboard</a>
+                <a class="btn btn-primary"  href="accounts/logout">Logout</a>
+                {% else %}
+                <a class="btn btn-primary"  href="accounts/register">Sign Up/Register</a>
+                <a class="btn btn-primary"  href="accounts/login">Login</a>
+                {% endif %}
+                <a class="btn btn-primary"  href="contact">Contact Us</a>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5"> Welcome to Hotel Travelsenia</h1>
+                            {% if user.is_authenticated %}
+                            <h5>Hello , &nbsp;{{user.first_name}}</h5>
+                            {%endif%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Icons Grid-->
+        <section class="features-icons bg-light text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                            <h3>Rooms</h3>
+                            <p class="lead mb-0">24/7 availability of Rooms</p>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                            <h3>Hi-tech Rooms</h3>
+                            <p class="lead mb-0">These are typically A/c for creative activities.!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
+                            <h3>Availabilty of Emergency services</h3>
+                            <p class="lead mb-0">24/7 availability of Services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image Showcases-->
+        <section class="showcase">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'assets/img/bg-showcase-1.jpg' %})"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Online Access</h2>
+                        <p class="lead mb-0">
+                            Hotel Transelvania embodies both elegance and the authenticity of the area itself. Rich wooden floors, a staircase that hugs the wall and opens to a walkway that encircles the lower living room, a sparkling pool and plenty of outdoor seating — these are just a few of the qualities that make this home fit for anyone hoping to really live the good life while vacationing.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url({% static 'assets/img/bg-showcase-2.jpg' %})"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>Bar and Restaurent</h2>
+                        <p class="lead mb-0">
+                            Hotel Transelvania has a sumptuous bar-restaurant with indoor and outdoor seating plus an elevated, open-sided terrace under canvas. Its a great place for a lazy afternoon drink and snack, serving beer, wine and cocktails, The lunch and dinner menus features Indian and multicuisine meals, such as pizza, pasta and sliders.</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'assets/img/bg-showcase-3.jpg' %})"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Private garden</h2>
+                        <p class="lead mb-0">
+                            The 1878 garden will make you forget all about the city with its three-story pagoda, gourd-shaped pond and roaring waterfalls. It turns pink with 20 varieties of cherry blossoms and camellias (the hotel is known for the flower, which has been growing there in abundance since the 14th century) in the spring, and it transforms into fiery red, orange and gold in the autumn
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials-->
+        <section class="testimonials text-center bg-light">
+            <div class="container">
+                <h2 class="mb-5">What people are saying...</h2>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-1.jpg' %}" alt="..." />
+                            <h5>Vamshi</h5>
+                            <p class="font-weight-light mb-0">"Food was excellent and their managers in restaurant were very helpful. Due to fast, my wife wanted some different fruits , which were not on table. Same was provided promptly without Any extra charge."</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-2.jpg' %}" alt="..." />
+                            <h5>Harshita</h5>
+                            <p class="font-weight-light mb-0">"Excellent service provided by the hotel staff. Especially the staff from 24/7 where we had our lunch & dinner we had excellent food with an excellent service. Me and family really liked the hotel"</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-3.jpg' %}" alt="..." />
+                            <h5>Krishna</h5>
+                            <p class="font-weight-light mb-0">"Breakfast/room/cleanliness - nice place to relax after facing the heat. Given that India is not a country you can walk around easily after a day tour, this hotel is recommended to spend a rest of the day!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Map -->
+        <h4> head office</h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.390640155044!2d74.79212031544334!3d13.010777590830191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35211b768ac8f%3A0x6b1144ac2d5dadf3!2sNational%20Institute%20of%20Technology%20Karnataka%20Surathkal.!5e0!3m2!1sen!2sin!4v1633972863883!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <!-- Footer-->
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        <!--<ul class="list-inline mb-2">
+                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                        </ul>-->
+                        <p class="text-muted small mb-4 mb-lg-0">Copyright&copy; Hotel Transelvania 2021. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="https://github.com/jithendra1798/SE-Project" target="_blank"><i class="bi-github fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
