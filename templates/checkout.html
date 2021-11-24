@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Register</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" -->
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Custom Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper"><br>
+        <center><h3>Final Check-Out Details</h3></center><br>
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div style="width: 70%; margin:auto;">
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped style="margin-bottom:0"">
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>Check-In Date</td>
+                                                <td><span class="badge badge-primary px-2"></span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><span class="badge badge-success px-2" style="font-size: medium;">{{room_taking_date}}</span>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>Check-Out Date</td>
+                                                <td><span class="badge badge-danger px-2"></span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><span class="badge badge-danger px-2" style="font-size: medium;">{{room_leaving_date}}</span>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>Booking Date</td>
+                                                <td><span class="badge badge-danger px-2"></span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><span class="badge badge-primary px-2" style="font-size: medium;">{{today_date}} (Today)</span>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped" style="margin-bottom:0">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th></th>
+                                                <th></th>
+                                                <th>Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>Room Price</td>
+                                                <td><span class="badge badge-primary px-2"></span>
+                                                </td>
+                                                <td></td>
+                                                <td class="color-primary">₹ {{room_price}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>Function Hall</td>
+                                                <td><span class="badge badge-primary px-2"></span>
+                                                </td>
+                                                <td></td>
+                                                <td class="color-primary">₹ {{hall_price}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th>
+                                                <td>Meal / Cafe</td>
+                                                <td><span class="badge badge-danger px-2"></span>
+                                                </td>
+                                                <td></td>
+                                                <td class="color-success">₹ {{meal_price}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>4</th>
+                                                <td>Gym / Swimming Pool</td>
+                                                <td><span class="badge badge-success px-2"></span>
+                                                </td>
+                                                <td></td>
+                                                <td class="color-danger">₹ {{gym_price}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>====>>></th>
+                                                <td><b>Total</b></td>
+                                                <td><span class="badge badge-success px-2"></span>
+                                                </td>
+                                                <td></td>
+                                                <td class="color-danger"><b>₹ {{total_price}}</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="form-validation">
+                                    <form class="form-valide" action="save" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-group row">
+                                            <div class="col-lg-6">
+                                                <input type="hidden" value="{{hotel_room.room.id}}" name="room_id">
+                                                <input type="hidden" name="room_taking_date" value="{{room_taking_date}}">
+                                                <input type="hidden" name="room_leaving_date" value="{{room_leaving_date}}">
+                                                <input type="hidden" value={{room_price}} name="room_price">
+                                                <input type="hidden" name="hall_price" value="{{hall_price}}">
+                                                <input type="hidden" name="meal_price" value="{{meal_price}}">
+                                                <input type="hidden" name="gym_price" value="{{gym_price}}">
+                                                <input type="hidden" name="total_price" value="{{total_price}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-7 ml-auto">
+                                                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div>
+                            {% for message in messages %}
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="background-color: red;">
+                                    <center><strong><h5>{{message}}</h5></strong></center> 
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            {% endfor  %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+
+    </div>        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div style="box-shadow: 4px 4px 5px grey;;text-align: center; margin:auto; background-color:lightgray; margin-bottom:0; padding:10px auto">
+            <div class="copyright" style="text-align: center; margin:auto; background-color:lightgray; margin-bottom:0; padding:10px auto">
+                <center><p>Copyright &copy; Hotel Travesenia 2021. All Rights Reserved.</p></center>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <script src="{% static 'plugins/common/common.min.js' %}"></script>
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/gleek.js' %}"></script>
+    <script src="{% static 'js/styleSwitcher.js' %}"></script>
+    <script src="{% static './plugins/validation/jquery.validate.min.js' %}"></script>
+    <script src="{% static './plugins/validation/jquery.validate-init.js' %}"></script>
+
+</body>
+
+</html>

@@ -15,6 +15,3 @@ class Hotel_User(models.Model):
     user_joined_date = models.DateField()
     user_photo  = models.ImageField(upload_to = 'user_photos',default='photo')
     user_aadhar_photo  = models.ImageField(upload_to = 'user_aadhaar_photo',default='photo')
-
-def __str__(self):
-    return self.user.user_first_name

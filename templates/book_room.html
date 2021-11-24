@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Register</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" -->
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Custom Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div style="width: 70%; margin:auto;">
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div>
+                            {% for message in messages %}
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="background-color: red;">
+                                    <center><strong><h5>{{message}}</h5></strong></center> 
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            {% endfor  %}
+                        </div>
+                        <br><br>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="text-center" style="font-size: x-large;">Booking {{hotel_room.room.room_type}} in {{hotel_room.room.room_city.name}}</h4><br><br>
+                                <div class="form-validation">
+                                    <form class="form-valide" action="checkout" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" >Check-In Date <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="hidden" value="{{hotel_room.room.id}}" name="room_id">
+                                                <input type="hidden" value={{hotel_room.room.room_price}} name="room_price">
+                                                <input id="date_disabler1" class="form-control" placeholder="DD-MM-YYYY" required="required" name="room_taking_date" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" >Check-Out Date <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input id="date_disabler2" class="form-control" placeholder="DD-MM-YYYY" required="required" name="room_leaving_date" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">Function Hall
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <label class="css-control css-control-primary css-checkbox" >
+                                                    <input type="checkbox" class="css-control-input"  name="hall_price" value="9999"> <span class="css-control-indicator"></span> ₹ 9999</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">Meals / Cafe
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <label class="css-control css-control-primary css-checkbox" >
+                                                    <input type="checkbox" class="css-control-input" name="meal_price" value="500"> <span class="css-control-indicator"></span> ₹ 500</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">Gym / Swimming Pool
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <label class="css-control css-control-primary css-checkbox">
+                                                    <input type="checkbox" class="css-control-input" name="gym_price" value="2000"> <span class="css-control-indicator"></span> ₹ 2000</label>
+                                            </div>
+                                        </div><br><br>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"><a href="#">Terms &amp; Conditions</a>  <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <label class="css-control css-control-primary css-checkbox" for="val-terms">
+                                                    <input type="checkbox" required class="css-control-input" id="val-terms" name="val-terms" value="1"> <span class="css-control-indicator"></span> I agree to the terms</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="submit" class="btn btn-primary">Proceed to Check-Out</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <br><br><br><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+
+    </div>        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div style="box-shadow: 4px 4px 5px grey;;text-align: center; margin:auto; background-color:lightgray; margin-bottom:0; padding:10px auto">
+            <div class="copyright" style="text-align: center; margin:auto; background-color:lightgray; margin-bottom:0; padding:10px auto">
+                <center><p>Copyright &copy; Hotel Travesenia 2021. All Rights Reserved.</p></center>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <script src="{% static 'plugins/common/common.min.js' %}"></script>
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/gleek.js' %}"></script>
+    <script src="{% static 'js/styleSwitcher.js' %}"></script>
+    <script src="{% static './plugins/validation/jquery.validate.min.js' %}"></script>
+    <script src="{% static './plugins/validation/jquery.validate-init.js' %}"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script>
+        var array = "{{booked_dates|safe}}"
+        console.log(array)
+
+        $('#date_disabler1').attr('min',today);
+        $('#date_disabler1').datepicker({
+            beforeShowDay: function(date){
+                var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+                return [ array.indexOf(string) == -1 ]
+            },
+            minDate: 0,
+            maxDate: 60
+        });
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+    </script>
+
+    <script>
+        var array = "{{booked_dates}}"
+        console.log("Dates : ",array)
+        $('#date_disabler2').attr('min',today);
+        $('#date_disabler2').datepicker({
+            beforeShowDay: function(date){
+                var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+                return [ array.indexOf(string) == -1 ]
+            },
+            minDate: 0,
+            maxDate: 60
+        });
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+    </script>
+</body>
+
+</html>

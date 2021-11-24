@@ -2,7 +2,22 @@
 {% load static %}
 
 {% block content %}
+<!--<script>
 
+    function analyzeText(){
+        var text = document.getElementById('text-to-analyze').value;
+
+        $.ajax({
+            type: "POST",
+            url: '{{ 'my-ajax-test/' }}',
+            data: { csrfmiddlewaretoken: '{{ csrf_token }}', text: text },  
+            success: function callback(response){
+                       /* do whatever with the response */
+                       alert(response);
+                    }
+        });
+    }
+</script>-->
         <!--**********************************
             Content body start
         ***********************************-->
@@ -23,14 +38,14 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-1">
                             <div class="card-body">
-                                <a href="../books/">
-                                    <h3 class="card-title text-white">Books taken</h3>
+                                <a href="/hotels/explore">
+                                    <h3 class="card-title text-white">Book a Hotel</h3>
                                     <div class="d-inline-block">
                                         <!-- jinja code -->
-                                        <h2 class="text-white">4565</h2>
+                                        <h2 class="text-white">Hotels</h2>
                                         <!-- <p class="text-white mb-0">Jan - March 2019</p> -->
                                     </div>
-                                    <span class="float-right display-5 opacity-5"><i class="fa fa-book"></i></span>
+                                    <span class="float-right display-5 opacity-5"><i class="fa fa-hotel"></i></span>
                                 </a>
                             </div>
                         </div>
@@ -38,23 +53,23 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-2">
                             <div class="card-body">
-                                <h3 class="card-title text-white">Due</h3>
+                                <h3 class="card-title text-white">Book a meal</h3>
                                 <div class="d-inline-block">
                                     <!-- jinja format<a href="./page-error-500.html"></a> -->
-                                    <h2 class="text-white">Rs 8541</h2>
+                                    <h2 class="text-white">Cafe</h2>
                                     <p class="text-white mb-0">Jan - March 2019</p>
                                 </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-coffee"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-3">
                             <div class="card-body">
-                                <h3 class="card-title text-white">User Type</h3>
+                                <h3 class="card-title text-white">Book a function hall</h3>
                                 <div class="d-inline-block">
                                     <!-- jinja format -->
-                                    <h2 class="text-white" style="text-transform: capitalize;">{{user.user_status}}</h2>
+                                    <h2 class="text-white" style="text-transform: capitalize;">Halls</h2>
                                     <p class="text-white mb-0">{{user.user_joined_date}}</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
@@ -263,10 +278,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>                   
 
-                 <h4 class="card-title mb-0">Library location </h4>
+                 <h3>Hotel main branch Location </h3><br>
                              <!-- library map -->
                               <!-- Map -->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.390640155044!2d74.79212031544334!3d13.010777590830191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35211b768ac8f%3A0x6b1144ac2d5dadf3!2sNational%20Institute%20of%20Technology%20Karnataka%20Surathkal.!5e0!3m2!1sen!2sin!4v1633972863883!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

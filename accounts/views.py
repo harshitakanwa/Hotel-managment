@@ -28,9 +28,10 @@ def login(request):
         return render(request, 'login.html')
 
 def register(request):
+
     new_id = User.objects.order_by('id').last().id+1
     year = str(datetime.date.today().year%100)
-    username = f'{year}MLU{new_id:0004}'
+    username = f'{year}HTU{new_id:0004}'
     if request.method == 'POST':
         user_first_name = request.POST['user_first_name']
         user_last_name = request.POST['user_last_name']
@@ -87,3 +88,34 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
+def forgotPassword(request):
+    if request.method == "POST":
+        forgotEmail = request.POST['forgotEmail']
+        if required_functions.validate_email(forgotEmail):
+            if Hotel_User.objects.filter(user_email=forgotEmail).exists() or User.objects.filter(
+                    email=forgotEmail).exists():
+                userObjectnew = Hotel_User.objects.filter(user_email=forgotEmail).values()
+                userObjectdef = User.objects.filter(email=forgotEmail).values()
+
+                print('=======================>>>>>>',forgotEmail, userObjectdef[0].get('username'),
+                      userObjectnew[0].get('user_password'),
+                      userObjectnew[0].get('user_first_name'))
+
+                thread = threading.Thread(target=required_functions.send_user_details,
+                                          args=(forgotEmail, userObjectdef[0].get('username'),
+                                                userObjectnew[0].get('user_password'),
+                                                userObjectnew[0].get('user_first_name')))
+                thread.start()
+                messages.info(request, 'Please check your email for Login Credentials !')
+                return redirect('login')
+
+            else:
+                messages.info(request, "OOPS, Looks Like you dont have an Account, Please Signup now !!")
+                return redirect('forgotPassword')
+
+        else:
+            messages.info(request, 'Please Enter a valid Email !')
+            return redirect('forgotPassword')
+
+    else:
+        return render(request, 'forgotpassword.html')

@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <!--**********************************
+            Content body start
+        ***********************************-->
+
+
+        <!-- <upto this line -->
+
+            <div class="content-body">
+
+                <div class="row page-titles mx-0">
+                    <div class="col p-md-0">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- row -->
+               
+                        
+                <div class="container-fluid">
+                    <!-- End Row -->
+                <div class="row">
+                    <div class="col-12 m-b-30">
+                        <h3 class="d-inline">Cities</h3><br><br>
+                        <!--<p class="text-muted">This is 3 column contents</p>-->
+                        <div class="row">
+                            {% for city in cities %}
+                            <div class="col-md-6 col-lg-3">
+                                <a href="{{city.id}}">
+                                    <div class="card">
+                                        <img class="img-fluid" src='{{city.image.url}}' style="width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;" alt="">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{city.name}}</h4>
+                                            <p class="card-text" style="width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{city.description}}</p>
+                                            <p class="card-text"><small class="text-muted">{{city.address}}</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- End Col -->
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                
+              
+            <!--**********************************
+                Content body end
+            ***********************************-->
+{% endblock %}
+            

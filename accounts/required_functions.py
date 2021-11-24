@@ -86,8 +86,8 @@ def send_user_details(user_email, username, user_password, user_first_name):
     smtp_server = 'smtp.gmail.com'
     port = 465  # 587
 
-    sender = 'hotel.cs300@gmail.com'
-    password = "KfvUtpvHLVSR7ia"    # input("Enter your password : ")
+    sender = 'hotel.cs300@gmail.com' #'library.cs303@gmail.com'
+    password = "Hotel@2021" #'XK9xdYmsT5ktxmV'    # input("Enter your password : ")
 
     context = ssl.create_default_context()
 
@@ -98,8 +98,8 @@ def send_user_details(user_email, username, user_password, user_first_name):
     for receiver in receivers:
         message = EmailMessage()
         message["To"] = receiver
-        message["Subject"] = "Login Details for Hotel Travelsenia"
-        message["From"] = f"Admin - Hotel Travelsenia <{sender}>"
+        message["Subject"] = "Login Details for Hotel Transylvenia"
+        message["From"] = f"Hotel Transylvenia <{sender}>"
         content = f'''\
         Hi {user_first_name}.
         Our django site is deployed at https://jithendra1798.pythonanywhere.com/.
@@ -172,7 +172,7 @@ def send_user_details(user_email, username, user_password, user_first_name):
                                                 <tbody>
                                                     <tr>
                                                     <td valign="middle" align="left"><a href="https://jithendra1798.pythonanywhere.com/" style="color:#0073b1;display:inline-block;text-decoration:none" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://jithendra1798.pythonanywhere.com/"> <img alt="VIM Library" src="https://github.com/jithendra1798/SE-Project/blob/main/icons/old-library-building.png?raw=true" style="max-height:42px;outline:none;color:#ffffff;max-width:unset!important;text-decoration:none" class="CToWUd" height="42" border="0"></a></td>
-                                                    <td style="padding:0 0 0 10px;padding-top:7px" valign="middle" align="left"><a href="https://jithendra1798.pythonanywhere.com/" style="color:#0073b1;display:inline-block;text-decoration:none" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://jithendra1798.pythonanywhere.com/">Magnus&nbsp;Library</a></td>
+                                                    <td style="padding:0 0 0 10px;padding-top:7px" valign="middle" align="left"><a href="https://jithendra1798.pythonanywhere.com/" style="color:#0073b1;display:inline-block;text-decoration:none" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://jithendra1798.pythonanywhere.com/">Hotel&nbsp;Tansylvenia</a></td>
                                                     <td width="100%" valign="middle" align="right">
                                                         <a href="https://jithendra1798.pythonanywhere.com/" style="margin:0;color:#0073b1;display:inline-block;text-decoration:none" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://jithendra1798.pythonanywhere.com/">
                                                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -207,7 +207,7 @@ def send_user_details(user_email, username, user_password, user_first_name):
                                                                         <tbody>
                                                                             <tr>
                                                                                 <hr style="color:#9b2335;">
-                                                                                <center><h4 style="color:#34568b">Welcome to Magnus Library, {user_first_name}!</h4></center>
+                                                                                <center><h4 style="color:#34568b">Welcome to Hotel Transylvenia, {user_first_name}!</h4></center>
                                                                                 <hr style="color:#9b2335;">
                                                                                 <br>
                                                                             </tr>
@@ -233,14 +233,14 @@ def send_user_details(user_email, username, user_password, user_first_name):
                                                                             </tr>
                                                                             <tr>
                                                                             <td id="m_514661073054809951qatest-hero-headline" colspan="2" style="padding-bottom:12px" align="left"><br>
-                                                                                <p style="margin:0;word-wrap:break-word;color:#4c4c4c;word-break:break-word;font-weight:400;font-size:16px;line-height:1.5">Thank you for registering with our Magnus Library.</p>
+                                                                                <p style="margin:0;word-wrap:break-word;color:#4c4c4c;word-break:break-word;font-weight:400;font-size:16px;line-height:1.5">Thank you for registering with our Hotel Transylvenia.</p>
                                                                             </td>
                                                                             </tr>
                                                                             <tr>
                                                                             <td id="m_514661073054809951qatest-hero-headline" colspan="2" style="padding-bottom:12px" align="left">
                                                                                 <br>
                                                                                 <p style="margin:0;word-wrap:break-word;color:hsl(216, 71%, 36%);word-break:break-word;font-weight:400;font-size:17px;line-height:1.5">Regards,</p>
-                                                                                <p style="margin:0;word-wrap:break-word;color:hsl(216, 71%, 36%);word-break:break-word;font-weight:400;font-size:17px;line-height:1.5"><b>Admin</b> - Magnus Library</p>
+                                                                                <p style="margin:0;word-wrap:break-word;color:hsl(216, 71%, 36%);word-break:break-word;font-weight:400;font-size:17px;line-height:1.5"><b>Admin</b> - Hotel Transylvenia</p>
                                                                             </td>
                                                                             </tr>
                                                                             <tr>
@@ -282,11 +282,11 @@ def send_user_details(user_email, username, user_password, user_first_name):
                                                                 <hr> 
                                                                 <tr>
                                                                 <td style="padding:12px 0 12px 0;text-align:center" align="center">
-                                                                    <p style="margin:0;color:#6a6c6d;font-weight:400;font-size:12px;line-height:1.333">You are receiving this email because you are a Magus Library Member.</p>
+                                                                    <p style="margin:0;color:#6a6c6d;font-weight:400;font-size:12px;line-height:1.333">You are receiving this email because you are a Hotel Transylvenia user.</p>
                                                                 </td>
                                                                 </tr>
                                                                 <tr>
-                                                                <td style="padding:0 0 16px 0;vertical-align:middle;text-align:center" valign="middle" align="center"><span style="color:#6a6c6d;font-weight:400;font-size:12px;line-height:1.333">Magnus Library © 2021</span></a>&nbsp;|&nbsp;<span style="color:#6a6c6d;font-weight:400;font-size:12px;line-height:1.333">An Automation Project by a group of 5 CSE'23 students at NITK.</span></td>
+                                                                <td style="padding:0 0 16px 0;vertical-align:middle;text-align:center" valign="middle" align="center"><span style="color:#6a6c6d;font-weight:400;font-size:12px;line-height:1.333">Hotel Transylvenia © 2021</span></a>&nbsp;|&nbsp;<span style="color:#6a6c6d;font-weight:400;font-size:12px;line-height:1.333">An Automation Project by a group of 5 CSE'23 students at NITK.</span></td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
